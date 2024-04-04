@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   main_toupper.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 15:11:42 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 15:15:08 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/04 15:16:25 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/04 15:17:50 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int ft_toupper(int c);
+
+#include <stdio.h>
+int main(void)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+    printf("%c\n", ft_toupper('h'));
 }

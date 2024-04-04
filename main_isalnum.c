@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   main_isalnum.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 15:11:42 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 15:15:08 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/04 14:17:54 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/04 14:19:23 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int ft_isalnum(int a);
+
+#include <stdio.h>
+int main(void)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+        printf("%d\n", ft_isalnum('c'));
+        printf("%d\n", ft_isalnum('1'));
+        printf("%d\n", ft_isalnum('+'));
 }
+

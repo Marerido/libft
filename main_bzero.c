@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   main_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 15:11:42 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 15:15:08 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/04 16:21:46 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/04 16:27:04 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include <stdio.h>
+
+void    ft_bzero(void *s, size_t n);
+
+int	main(void)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+	char str[10] = "HellO";
+
+	printf("%s\n", ft_bzero(str, 5));
 }
