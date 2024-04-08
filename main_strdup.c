@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   main_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 17:23:50 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/08 17:24:55 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/08 17:38:03 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/08 17:38:06 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+#include<stdio.h>
+#include<string.h>
+ 
+int main()
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (str1[i] == str2[i] && (str1[i] != '\0'
-			&& str2[i] != '\0') && i < n - 1)
-	{
-		++i;
-	}
-	return (str1[i] - str2[i]);
+    char source[] = "GeeksForGeeks";
+ 
+    // A copy of source is created dynamically
+    // and pointer to copy is returned.
+    char* target = strdup(source); 
+ 
+    printf("%s", target);
+    return 0;
 }

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/08 17:28:30 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/08 17:29:34 by tunglaub         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-char	*ft_strnstr(const char *str,const char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -10,7 +22,6 @@ char	*ft_strnstr(const char *str,const char *to_find, size_t len)
 		return (0);
 	if (to_find[i] == '\0' || to_find == str)
 		return ((char *)str);
-
 	while (str[i] != '\0')
 	{
 		j = 0;
