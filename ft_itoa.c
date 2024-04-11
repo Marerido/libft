@@ -9,7 +9,7 @@ int numlen(int n)
 		return (1 + numlen(n / 10));
 }
 
-char*	ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int	length;
 	int	check_negative;
