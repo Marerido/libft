@@ -6,7 +6,7 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 13:54:53 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/11 16:19:11 by root             ###   ########.fr       */
+/*   Updated: 2024/04/11 16:35:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+
+
+typedef struct s_list
+{
+	void		*content;
+	struct s_list	*next;
+}	t_list;
 /*******************************************************************************
-									Control
+		       		  Control
 *******************************************************************************/
 
 int	ft_isalpha(int a);
@@ -49,7 +56,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
                                     Strings
 *******************************************************************************/
 unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size);
-int		ft_strlen(char *str);
+size_t		ft_strlen(char *str);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *str, int c);

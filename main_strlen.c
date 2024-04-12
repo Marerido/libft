@@ -6,12 +6,13 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:20:33 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:53 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:24:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str);
+//int ft_strlen(char *str);
 
+#include "libft.h"
 
 #include <stdio.h>
 int main(void)

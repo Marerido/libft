@@ -6,13 +6,16 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:29:10 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 14:31:56 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/12 21:27:45 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int a);
+//int ft_isalpha(int a);
 
 #include <stdio.h>
+
+#include "libft.h"
+
 int main(void)
 {
     char c = 'w';

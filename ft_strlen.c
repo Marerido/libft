@@ -6,13 +6,13 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:20:07 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 15:21:09 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:32:14 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
