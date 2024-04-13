@@ -6,11 +6,11 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:07:57 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/08 17:14:18 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:01:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void copy_data(unsigned char *dest, const unsigned char *src, size_t n)
 {
@@ -27,10 +27,10 @@ void copy_data(unsigned char *dest, const unsigned char *src, size_t n)
     }
     else
     {
-        while (n >= 0)
+        while (i < n)
         {
             dest[n] = src[n];
-            n++;
+            i++;
         }
     }
 }
