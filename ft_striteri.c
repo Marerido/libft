@@ -6,11 +6,11 @@
 /*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:53:56 by root              #+#    #+#             */
-/*   Updated: 2024/04/11 14:03:20 by root             ###   ########.fr       */
+/*   Updated: 2024/04/15 15:43:53 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
@@ -24,4 +24,3 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		}
 	}
 }
-

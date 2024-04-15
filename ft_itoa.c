@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 14:56:17 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/15 14:57:17 by tunglaub         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <string.h>
 
-int numlen(int n)
+int	numlen(int n)
 {
 	if (n < 10)
 		return (1);
@@ -11,8 +23,8 @@ int numlen(int n)
 
 char	*ft_itoa(int n)
 {
-	int	length;
-	int	check_negative;
+	int		length;
+	int		check_negative;
 	char	*ptr;
 
 	check_negative = 0;
@@ -36,4 +48,3 @@ char	*ft_itoa(int n)
 		ptr[0] = '-';
 	return (ptr);
 }
-
