@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void ft_putendl_fd(char *s, int fd)
 {
 	int	length;
@@ -6,6 +8,6 @@ void ft_putendl_fd(char *s, int fd)
 	if (s != NULL)
 	{
 		write(fd, s, length);
-		write(fd, '\n', 1);
+		write(fd, "\n", 1);
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:31:00 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/08 17:35:22 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:12:37 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
+/*
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -21,7 +21,7 @@ int	ft_strlen(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
-}
+}*/
 
 char	*ft_strdup(char *src)
 {

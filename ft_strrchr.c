@@ -6,14 +6,13 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:22:53 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/08 17:23:31 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:28:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *str, int c)
 {
 	int		i;
-	char	out;
 
 	i = 0;
 	while (str[i] != '\0')

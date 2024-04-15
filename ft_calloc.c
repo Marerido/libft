@@ -6,7 +6,7 @@
 /*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 12:08:21 by root              #+#    #+#             */
-/*   Updated: 2024/04/13 12:18:31 by root             ###   ########.fr       */
+/*   Updated: 2024/04/14 13:40:08 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*mem;
-	
+
 	mem = (void *)malloc(nitems * size);
 	if (!mem)
 		return (NULL);
