@@ -1,57 +1,45 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:28:30 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/08 17:42:20 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/16 18:18:09 by tunglaub         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	str_length(char *str)
+int	total_length(const char *s1, const char *s2)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return (ft_strlen(s1) + ft_strlen(s2) + 1);
 }
 
-int	total_length(char *s1, char *s2)
-{
-	return (str_length(s1) + str_length(s2) + 1);
-}
-
-char	ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = str_length(dest);
+	j = ft_strlen(dest);
 	while (src[i] != '\0')
 	{
 		dest[j + i] = src[i];
 		i++;
 	}
 	dest[i + j] = '\0';
-	return (*dest);
+	return (dest);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		total_l;
 	char	*ptr;
 
 	total_l = total_length(s1, s2);
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	ptr = (char *)malloc(sizeof(char) * (total_l));
 	if (!ptr)
