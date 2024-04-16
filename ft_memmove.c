@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:07:57 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/15 16:52:26 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/16 15:48:31 by tunglaub         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "libft.h"
 
@@ -17,7 +17,7 @@ void	copy_data(unsigned char *dest, const unsigned char *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (dest < src)
+	if (dest <= src)
 	{
 		while (i < n)
 		{
@@ -27,10 +27,10 @@ void	copy_data(unsigned char *dest, const unsigned char *src, size_t n)
 	}
 	else
 	{
-		while (i < n)
+		while (n > 0)
 		{
-			dest[n - i] = src[n - i];
-			i++;
+			dest[n - 1] = src[n - 1];
+			n--;
 		}
 	}
 }
@@ -42,8 +42,8 @@ void	*ft_memmove(void *str1, const void *str2, size_t n)
 
 	dest = (unsigned char *)str1;
 	src = (unsigned char *)str2;
-	if (!dest && !src)
+	if (!dest)
 		return (NULL);
-	copy_data(str1, str2, n);
+	copy_data(dest, src, n);
 	return (dest);
 }
