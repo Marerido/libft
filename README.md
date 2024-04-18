@@ -79,7 +79,5 @@ creates a substring from a given string within a given range.
 ## Functions
 ## Datatypes
 size_t included in library:
-'''
-#include <stddef.h>
-'''
+``` #include <stddef.h> ```
 equivalent to unsigned long int
