@@ -62,6 +62,19 @@ similar to ft_strcmp but here we are handling with memories.
 
 ## ft_strnstr
 This function is looking for a string in another string and returns everything after the first occurence of the to_find string in string.
+
+## ft_atoi
+This function takes a given string in which numbers are included and converts this string into the corresponding integer.
+
+## ft_calloc
+works like malloc, so it allocate memory but compared to malloc, it sets the allocated memory to zero.
+
+## ft_strdup
+This function creates an duplicated string. 
+
+## ft_substr
+creates a substring from a given string within a given range. 
+
 # used Functions and Data types
 ## Functions
 ## Datatypes
