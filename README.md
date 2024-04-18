@@ -19,9 +19,9 @@ checks how many character a given string has
 
 ## ft_memset 
 Fill a given buffer with the wanted character. 
-'''
+```
 void	*ft_memset(void *pointer, int value, size_t count)
-'''
+```
 Here a pointer indicats the size of the buffer, int value is equivalent with the character in decimal code and count indicats how much buffer the character should be using
 
 ## ft_bzero
