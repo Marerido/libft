@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 03:56:42 by root              #+#    #+#             */
-/*   Updated: 2024/04/19 23:59:50 by root             ###   ########.fr       */
+/*   Created: 2024/04/20 12:34:54 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/20 12:34:55 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	find_end(char const *str, char const *set)
 
 char	*ft_strtrim(char const *str, char const *set)
 {
-	int	start;
-	int	end;
+	int		start;
+	int		end;
 	char	*ptr;
 	char	*c;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 20:34:05 by root              #+#    #+#             */
-/*   Updated: 2024/04/20 01:06:44 by root             ###   ########.fr       */
+/*   Created: 2024/04/20 12:34:11 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/20 12:34:13 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ char	**memory_allocation(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	int	start;
-	int	i;
-	int	j;
+	int		start;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
