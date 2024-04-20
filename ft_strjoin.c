@@ -1,50 +1,42 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:28:30 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/16 18:18:09 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/18 02:49:21 by root              #+#    #+#             */
+/*   Updated: 2024/04/18 02:52:05 by root             ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int	total_length(const char *s1, const char *s2)
-{
-	return (ft_strlen(s1) + ft_strlen(s2) + 1);
-}
-
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcpy(char *dest, char const *src)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = ft_strlen(dest);
 	while (src[i] != '\0')
 	{
-		dest[j + i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dest[i + j] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		total_l;
 	char	*ptr;
 
-	total_l = total_length(s1, s2);
 	if (!s1 || !s2)
 		return (NULL);
-	ptr = (char *)malloc(sizeof(char) * (total_l));
+	ptr = (char *)malloc(sizeof(char) 
+			* (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ptr)
 		return (NULL);
-	ft_strcat(ptr, s1);
-	ft_strcat(ptr, s2);
+	ft_strcpy(ptr, s1);
+	ft_strcpy(ptr + ft_strlen(s1), s2);
 	return (ptr);
 }

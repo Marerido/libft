@@ -3,48 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:56:17 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/15 14:57:17 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/19 22:28:17 by root              #+#    #+#             */
+/*   Updated: 2024/04/19 23:26:51 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 
-int	numlen(int n)
+int	numlen(int n) 
 {
-	if (n < 10)
-		return (1);
-	else
-		return (1 + numlen(n / 10));
+	int	length;
+
+	length = 1;
+	while (n /= 10)
+		length++;
+	return (length);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
-	int		length;
-	int		check_negative;
-	char	*ptr;
+	char	*str;	
+	int	length;
+	int	is_negative;
+	long int	n;
 
-	check_negative = 0;
+	n = nbr;
+	is_negative = 0;
+	length = numlen(n);
 	if (n < 0)
+		is_negative = 1;
+	str = (char *)malloc(sizeof(char) * (length + is_negative + 1));
+	if (!str)
+		return (NULL);
+	if (is_negative)
 	{
-		check_negative = 1;
+		str[0] = '-';
 		n = -n;
 	}
-	length = numlen(n);
-	ptr = (char *)malloc(sizeof(char) * (length + check_negative + 1));
-	if (!ptr)
-		return (NULL);
-	ptr[length + check_negative] = '\0';
-	while (n > 0)
+	str[length + is_negative] = '\0';
+	while (length > 0)
 	{
+		str[length + is_negative - 1] = '0' + (n % 10);
+		n /= 10;
 		length--;
-		ptr[length + check_negative] = 48 + n % 10;
-		n = n / 10;
 	}
-	if (check_negative)
-		ptr[0] = '-';
-	return (ptr);
+	return (str);
 }

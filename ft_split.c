@@ -1,86 +1,72 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:03:14 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/16 17:18:13 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/19 20:34:05 by root              #+#    #+#             */
+/*   Updated: 2024/04/20 01:06:44 by root             ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_to_split(char const *s, char c)
+static int	count_words(const char *s, char c)
 {
+	int	count;
 	int	i;
 
 	i = 0;
-	while (s[i] != c && s[i])
-		i++;
-	return (i);
-}
-
-int	number_of_substrings(char const *s, char c)
-{
-	int	number_of_strings;
-	int	i;
-
-	i = 0;
-	number_of_strings = 0;
+	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-			number_of_strings++;
-		i++;
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+		else
+			i++;
 	}
-	return (number_of_strings + 1);
+	return (count);
 }
 
 char	**memory_allocation(char const *s, char c)
 {
 	char	**ptr;
 
-	ptr = malloc(sizeof(char *) * (number_of_substrings(s, c) + 1));
+	ptr = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!ptr || !s)
 		return (NULL);
 	return (ptr);
 }
 
-void	copy(char *dest, char const *source, int c)
-{
-	int	i;
-
-	i = 0;
-	while (i < c)
-	{
-		dest[i] = source[i];
-		i++;
-	}
-	dest[c] = '\0';
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	int		k;
-	int		l;
-	int		i;
+	int	start;
+	int	i;
+	int	j;
 
 	i = 0;
-	l = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
 	ptr = memory_allocation(s, c);
-	while (s[i])
+	if (!ptr)
+		return (NULL);
+	while (i < count_words(s, c))
 	{
-		k = count_to_split(s + i, c);
-		ptr[l] = malloc(sizeof(char) * (k + 1));
-		if (!ptr[l])
-			return (NULL);
-		copy(ptr[l], s + i, k);
-		i += k + 1;
-		l++;
+		while (s[j] == c)
+			j++;
+		start = j;
+		while (s[j] && s[j] != c)
+			j++;
+		ptr[i] = ft_substr(s, start, (j - start));
+		i++;
 	}
-	ptr[l] = NULL;
+	ptr[count_words(s, c)] = NULL;
 	return (ptr);
 }

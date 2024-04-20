@@ -1,18 +1,18 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 15:07:31 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/16 15:58:06 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/17 18:14:36 by root              #+#    #+#             */
+/*   Updated: 2024/04/19 01:09:34 by root             ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	dest_length;
 	size_t	src_length;
@@ -37,4 +37,3 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		dest_length = size;
 	return (dest_length + src_length);
 }
-

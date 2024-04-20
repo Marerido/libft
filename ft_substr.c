@@ -1,37 +1,35 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 17:44:03 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/16 17:01:18 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/20 02:09:43 by root              #+#    #+#             */
+/*   Updated: 2024/04/20 02:09:46 by root             ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	stringlen;
-	unsigned int	sizesub;
-	unsigned int	end;
-	char			*substr;
+    size_t stringlen;
+    size_t sizesub;
+    char *substr;
 
-	stringlen = ft_strlen(s);
-	end = 0;
-	if (start < stringlen)
-		end = len;
-	if (end == len)
-		end = len;
-	if (s == NULL)
-		return (NULL);
-	sizesub = stringlen - start;
-	substr = (char *)malloc(sizeof(char) * (sizesub + 1));
-	if (!substr)
-		return (NULL);
-	ft_memmove(substr, &s[start], len);
-	substr[len] = '\0';
-	return (substr);
+    if (s == NULL)
+        return (NULL);
+    stringlen = ft_strlen(s);
+    if (start >= stringlen)
+        return (ft_strdup("")); // Wenn start größer oder gleich der Länge des Strings ist, geben Sie einen leeren String zurück
+    if (len > stringlen - start)
+        len = stringlen - start; // Wenn len größer als der verbleibende Teil des Strings ist, setzen Sie len auf den verbleibenden Teil
+    sizesub = len;
+    substr = (char *)malloc(sizeof(char) * (sizesub + 1));
+    if (!substr)
+        return (NULL);
+    ft_strlcpy(substr, &s[start], len + 1); // Stellen Sie sicher, dass Sie len + 1 verwenden, um Platz für das Null-Terminator-Zeichen zu schaffen
+    return (substr);
 }
+

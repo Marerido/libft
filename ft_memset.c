@@ -6,11 +6,11 @@
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:40:09 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/04 16:05:14 by tunglaub         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:56:54 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *pointer, int value, size_t count)
 {

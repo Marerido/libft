@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunglaub <tunglaub@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 13:54:53 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/16 17:35:02 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/18 02:53:24 by root              #+#    #+#             */
+/*   Updated: 2024/04/19 23:26:27 by root             ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -34,8 +34,8 @@ int				ft_isprint(int a);
 *******************************************************************************/
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-int				ft_atoi(char *str);
-char			*ft_itoa(int n);
+int				ft_atoi(const char *str);
+char			*ft_itoa(int nbr);
 /*******************************************************************************
                                     Memory
 *******************************************************************************/
@@ -54,14 +54,14 @@ char			*ft_strrchr(const char *str, int c);
 char			*ft_strnstr(const char *str, const char *to_find, size_t len);
 char			*ft_strdup(char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char            *ft_strjoin(const char *s1, const char *s2);
-char			*ft_strtrim(char const *str, char const c);
+char			*ft_strjoin(const char *s1, const char *s2);
+char			*ft_strtrim(char const *str, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t			ft_strlen(const char *str);
-size_t			ft_strlcat(char *dest, char *src, size_t size);
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 /*******************************************************************************
                                     Others
 *******************************************************************************/
