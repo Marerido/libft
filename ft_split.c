@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 12:34:11 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/20 12:34:13 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/21 12:33:26 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/21 12:33:31 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,37 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-char	**memory_allocation(char const *s, char c)
+static char	**memory_allocation(char const *s, char c)
 {
 	char	**ptr;
 
 	ptr = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!ptr || !s)
+	if (!ptr)
 		return (NULL);
 	return (ptr);
 }
 
-char	**ft_split(char const *s, char c)
+void	ft_free(char **ptr)
 {
-	char	**ptr;
-	int		start;
-	int		i;
-	int		j;
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+	{
+		free(ptr[i]);
+		i++;
+	}
+	free(ptr);
+}
+
+static char	**find(char **ptr, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	start;
 
 	i = 0;
 	j = 0;
-	if (!s)
-		return (NULL);
-	ptr = memory_allocation(s, c);
-	if (!ptr)
-		return (NULL);
 	while (i < count_words(s, c))
 	{
 		while (s[j] == c)
@@ -65,8 +72,26 @@ char	**ft_split(char const *s, char c)
 		while (s[j] && s[j] != c)
 			j++;
 		ptr[i] = ft_substr(s, start, (j - start));
+		if (!ptr[i])
+		{
+			ft_free(ptr);
+			return (NULL);
+		}
 		i++;
 	}
 	ptr[count_words(s, c)] = NULL;
+	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ptr;
+
+	if (!s)
+		return (NULL);
+	ptr = memory_allocation(s, c);
+	if (!ptr)
+		return (NULL);
+	ptr = find(ptr, s, c);
 	return (ptr);
 }

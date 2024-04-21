@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 00:52:24 by root              #+#    #+#             */
-/*   Updated: 2024/04/20 01:03:49 by root             ###   ########.fr       */
+/*   Created: 2024/04/21 12:37:38 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/21 12:37:40 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	copy_data(void *dest, const void *src, size_t n)
+static void	copy_data(void *dest, const void *src, size_t n)
 {
 	char		*destination;
 	const char	*source;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	check_set(char c, char const *set)
+static int	check_set(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	check_set(char c, char const *set)
 	return (0);
 }
 
-int	find_start(char const *str, char const *set)
+static int	find_start(char const *str, char const *set)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ int	find_start(char const *str, char const *set)
 	return (i);
 }
 
-int	find_end(char const *str, char const *set)
+static int	find_end(char const *str, char const *set)
 {
 	int	length;
 	int	i;

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunglaub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 13:02:15 by tunglaub          #+#    #+#             */
-/*   Updated: 2024/04/20 13:29:12 by tunglaub         ###   ########.fr       */
+/*   Created: 2024/04/21 12:36:56 by tunglaub          #+#    #+#             */
+/*   Updated: 2024/04/21 12:36:58 by tunglaub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	numlen(long int n)
+static int	numlen(long int n)
 {
 	int	length;
 
@@ -27,7 +27,7 @@ int	numlen(long int n)
 	return (length);
 }
 
-char	*digits(char *str, long int n, int length, int is_negative)
+static char	*digits(char *str, long int n, int length, int is_negative)
 {
 	while (length > 0)
 	{
