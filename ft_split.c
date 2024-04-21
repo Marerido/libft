@@ -43,7 +43,7 @@ static char	**memory_allocation(char const *s, char c)
 	return (ptr);
 }
 
-void	ft_free(char **ptr)
+static void	ft_free(char **ptr)
 {
 	int	i;
 
